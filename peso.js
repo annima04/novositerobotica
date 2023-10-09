@@ -1,23 +1,28 @@
+//cria referencia ao form
 const form = document.querySelector("form")
-const rest = document.querySelector("h3")
+const resp = document.querySelector("h3")
 
+//ouvinte
 form.addEventListener("submit", (e) => {
     e.preventDefault()
 
     const nome = form.inNome.value
     const masculino = form.inMasculino.checked
-    const altura = Number(form.inAlura.value)
-    
-    let peso
-    if (masculino) {
-        peso = 22 * Math.pow(alura, 2)
-    } else {
-        peso = 21 * Math.pow(alura, 2)
-    }
+    const altura = Number(form.inAltura.value)
 
-    Response.innerText = `$ {nome} seu peso ideal é: ${pesp.toFixed(3)}kg`
+    //calculando o peso ideal
+    let pesoif 
+    if (masculino) {
+        peso = 22 * Math.pow(altura, 2)
+    } else {
+        peso = 21 * Math.pow(altura, 2)
+    }
+    //apresenta a resposta
+    resp.innerText = `${nome} seu peso ideal é: ${peso.toFixed(3)}kg`
 })
-  
+
+//segundo ouvinte. limpa o conteúdo de h3
+
 form.addEventListener("reset", (e) => {
-    Response.innerText= " "
+    resp.innerText = " "   //limpa o conteúdo de h3
 })
