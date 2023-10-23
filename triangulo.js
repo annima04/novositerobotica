@@ -1,8 +1,8 @@
-const form = document.querySelector("fora")
+const form = document.querySelector("form")
 const resp = document.querySelector("#outResp")
-const resp1 = document.querySelector("outResp1")
+const resp1 = document.querySelector("#outResp1")
 
-form.addEventListener("submit", (e) =>{
+form.addEventListener("submit", (e)=>{
     e.preventDefault()
 
 const LadoA = Number(form.inLadoA.value)
@@ -17,14 +17,14 @@ if((LadoA > LadoB + LadoC) || (LadoB > LadoA + LadoC) || (LadoC > LadoA + LadoB)
     return
 }
 
-resp1.innerText  = `Lador podem formar um triângulo` 
+resp.innerText  = `Lados podem formar um triângulo` 
 
 if(LadoA == LadoB && LadoA == LadoC){
-    resp1.innerText = `Tipo: Equilátero`
+    resp1.innerText = 'Tipo: Equilátero'
 } else if((LadoA == LadoB) || (LadoA == LadoC) || (LadoB == LadoC)){
-    resp1.innerText = `Tipo: Isóceles `
+    resp1.innerText = 'Tipo: Isóceles'
 }else{
-    resp1.innerText = `Tipo: Escaleno`
+    resp1.innerText = 'Tipo: Escaleno'
 }
 
 })
